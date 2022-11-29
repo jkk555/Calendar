@@ -15,9 +15,13 @@
   font-size: 40px;
   color: white;
 }
-
-.back,.next:hover{
+.back button,.next button{
+  font-size: 40px;
+  color: white;
+  background: none;
+  padding: 0;
   cursor: pointer;
+  border: none;
 }
 
 .week_days{
