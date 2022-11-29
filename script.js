@@ -1,25 +1,20 @@
-let date;
-let year;
-let month;
-let allMonthDays;
-let weekDays;
-let click=0;
-let monthBlock = document.getElementById("month");
-
+let date,year,month,allMonthDays,weekDays,click=0,monthBlock,yearBlock;
+const months = ["Styczeń","Luty","Marzec","Kwiecień","Maj","Czerwiec","Lipiec","Sierpień","Wrzesień","Październik","Listopad","Grudzień"];
 
 function calendar (){
+  
+  monthBlock = document.querySelector(".month");
+  yearBlock = document.querySelector(".year");
   date = new Date();
   year = date.getFullYear();
   
   if(parseInt(date.getMonth().toString())+click==12) 
   {                                                  
-    alert("test1");
     month = 0;
     year+=1;
   }
   else if(parseInt(date.getMonth().toString())+click==-1)
   {
-    alert("test2");
     month = 11;
     year-=1;
   }
@@ -31,6 +26,9 @@ function calendar (){
   
   date = new Date(year,month,1);
   weekDays = date.toString().charAt(0)+date.toString().charAt(1)+date.toString().charAt(2);
+
+  monthBlock.innerHTML = months[parseInt(date.getMonth().toString())];
+  yearBlock.innerHTML = date.getFullYear();
   
   switch(weekDays)
   {
@@ -58,8 +56,8 @@ function calendar (){
   }
 
   t = allMonthDays+weekDays-1;
-  //alert(t);
-  for(let i=0;i<37;i++)
+  
+  for(let i=0;i<42;i++)
   {
     document.getElementById(i).innerText = "";
   }
@@ -87,3 +85,4 @@ function next(){
   calendar()
 }
 
+window.onload = () => calendar();
