@@ -4,11 +4,28 @@
 
 .calendar{
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 0.3fr);
+  grid-template-rows: repeat(8, 0.3fr);
 }
 
 .div1 { 
   grid-area: 1 / 1 / 2 / 8; 
   background-image: url("https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  text-align: center;
+  font-size: 40px;
+  color: white;
+}
+
+.back,.next:hover{
+  cursor: pointer;
+}
+
+.week_days{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.item{
+  align-self: center;
+  justify-self: center;
 }
